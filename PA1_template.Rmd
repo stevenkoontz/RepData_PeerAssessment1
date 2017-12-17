@@ -1,3 +1,8 @@
+---
+output: 
+  html_document: 
+    keep_md: yes
+---
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
@@ -136,6 +141,10 @@ plot(step_interval, type="l", main= "Daily Activity Pattern", lwd=2, xlab="5 Min
 abline(h=mean(step_interval$steps), col="blue")
 ```
 
+## Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
+```{r}
+step_interval[which.max(step_interval$steps),]
+```
 
 ### Imputing missing values
 First lets see how many missing values we have in our data using the **"sum"** and **"complete.cases"** arguments.
